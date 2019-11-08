@@ -1,3 +1,28 @@
 /* *{
   background-color: #AFD4C0;
 } */
+
+
+.wiz-contanier {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+.app-contanier{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+img{
+	height: 150px;
+	width: auto;
+	margin: 5px;
+}

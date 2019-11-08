@@ -9,7 +9,7 @@ function App() {
   return (
 
     <HashRouter> 
-          <div>
+          <div className="app-contanier">
             <Header />
             
             {routes}
@@ -21,7 +21,7 @@ function App() {
 export default App;
 
 
-{/* <nav className='nav'>
+/* <nav className='nav'>
 <div className='link-wrap'>
   <Link to="/" className='links'>
     Dashboard
@@ -30,4 +30,4 @@ export default App;
     Wizard
   </Link> 
 </div>
-</nav> */}
+</nav> */
