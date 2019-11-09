@@ -9,6 +9,7 @@ app.use(express.json())
 
 app.get('/api/houses', ctrl.getAllHouses)
 app.post('/api/houses', ctrl.addHouse)
+app.delete('/api/houses/:id', ctrl.deleteHouse)
 
 massive(CONNECTION_STRING).then(databaseConnection => {
   app.set('db', databaseConnection) //this is an express function. Look more into it

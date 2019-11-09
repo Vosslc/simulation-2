@@ -12,10 +12,10 @@ class Dashboard extends Component {
         houseList:[]
       };
       
-      console.log(this.state.houseList)
+      // console.log(this.state.houseList)
+      this.deleteHouse = this.deleteHouse.bind(this)
     }
 
-  
 
 // ****AXIOS SERVER CALLS**** //
   componentDidMount(){
@@ -27,6 +27,15 @@ class Dashboard extends Component {
       })
     })
   }
+
+  deleteHouse(id){
+    axios.delete(`/api/houses/${id}`).then(response => {
+      this.setState({
+        houseList: response.data
+      })
+    })
+  }
+
 
   // .filter(element => element.list === "beerWishList")
 
@@ -49,6 +58,7 @@ class Dashboard extends Component {
             el={el} 
             index={index}
             key={el.id}
+            remove={this.deleteHouse}
           />
         ))}  
       </div>

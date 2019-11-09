@@ -29,5 +29,18 @@ module.exports = {
       .catch(err => {
         console.log(err)
       })
-    }
+    },
+
+    deleteHouse(req, res){
+      const db = req.app.get('db')
+      const {id} = req.params
+      db.delete_house(id)
+        .then(result => {
+          res.status(200).send(result)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+
 }
