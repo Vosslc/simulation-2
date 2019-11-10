@@ -1,0 +1,37 @@
+
+.Header{
+  /* display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+  background-color: #519772; */
+
+  width: 100%;
+  height: 75px;
+  background-color: #519872;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.houseImg{
+  height: 28px;
+  width: 34px;
+  position: absolute;
+  top: 23px;
+  left: 400px;
+}
+
+.Header>h3 {
+  left: 445px;
+}
+.Header>h3, .Header>img {
+  position: absolute;
+  bottom: -25px;
+
+}

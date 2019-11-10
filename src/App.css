@@ -1,24 +1,16 @@
-/* *{
-  background-color: #AFD4C0;
-} */
-
-
-.wiz-contanier {
-  display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
-}
 
 .app-contanier{
-  display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	background: #AFD4C0;
+	padding-top: 75px;
+	background-color: #afd4c0;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: -ms-flexbox; 
+	display: flex;
+	-ms-flex-pack: center;
 	justify-content: center;
-	align-items: center;
-	align-content: stretch;
+	
 }
 
 img{
@@ -26,3 +18,4 @@ img{
 	width: auto;
 	margin: 5px;
 }
+

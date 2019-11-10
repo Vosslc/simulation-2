@@ -1,7 +1,25 @@
-
+.listings{
+  /* margin: 20px; */
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 10px;
+}
 .deleteBtn{
   color: blue;
   font-weight: bold;
   font-size: larger;
   border: none;
+  background: #E5F4EC;
+  display: inline-block;
+  margin-left: 75px;
+}
+
+.houses{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
 }

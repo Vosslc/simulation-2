@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './dashboard.css';
 import House from '../House/House'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -45,22 +46,23 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        
-        <h2>Dashboard.js</h2>
-        
-
-        <Link to='../Wizard/Wizard'>
-          <button className='btn'>Add New Property</button>
-        </Link>
-        {this.state.houseList.map((el, index) =>(
-          <House
-            el={el} 
-            index={index}
-            key={el.id}
-            remove={this.deleteHouse}
-          />
-        ))}  
+      <div className="dashContainer">
+        <div className="dash_subheader">
+          <h2>Dashboard</h2>
+          <Link to='../Wizard/Wizard'>
+            <button className='btn'>Add New Property</button>
+          </Link>
+        </div>
+        <div className = "dashboard">
+          {this.state.houseList.map((el, index) =>(
+            <House
+              el={el} 
+              index={index}
+              key={el.id}
+              remove={this.deleteHouse}
+            />
+          ))}  
+        </div>
       </div>
     );
   }

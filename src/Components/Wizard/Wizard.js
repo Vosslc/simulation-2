@@ -69,7 +69,7 @@ class Wizard extends Component {
     return (
       <div className = "wiz-contanier">
         <h2>Wizard.js</h2>
-        <Link to='../Dashboard/Dashboard'>
+        <Link to='/'>
           <button className='btn'>Cancel</button>
         </Link>
         
@@ -115,7 +115,7 @@ class Wizard extends Component {
           />
         </div>
           <button className='btn' onClick={()=> this.addHouse()}>Complete</button>
-          {console.log(this.addHouse)}
+
 
       </div>
     );

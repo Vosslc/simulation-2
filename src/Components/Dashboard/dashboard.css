@@ -1,11 +1,34 @@
-/* .btn {
+.btn {
+  margin: 40px;
+  background-color: #8aea92;
+  border: none;
+  padding: 10px;
   font-size: 20px;
-  height: 85px;
-  width: 250px;
-  margin: 25px auto;
-  border: solid 2px lightgray;
-  background: none;
-  display: block;
-  cursor: pointer;
-  color: #222;
-} */
+  font-weight: 700;
+}
+
+.dashContainer{
+  width: 50vw;
+  background-color: #e5f4ec;
+}
+
+.dashboard{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+  align-content: stretch;
+  
+}
+
+.dash_subheader {
+  display: -ms-flexbox;
+  display: flex;
+  /* -ms-flex-pack: justify; */
+  justify-content: space-between;
+  font-size: 25px;
+  color: #3b5249;
+  margin-right: 5px;
+  margin-left: 15px;
+}
