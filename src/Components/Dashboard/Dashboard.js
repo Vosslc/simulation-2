@@ -52,7 +52,9 @@ class Dashboard extends Component {
           <Link to='../Wizard/Wizard'>
             <button className='btn'>Add New Property</button>
           </Link>
+          
         </div>
+        <hr/>
         <div className = "dashboard">
           {this.state.houseList.map((el, index) =>(
             <House

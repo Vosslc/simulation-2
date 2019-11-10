@@ -23,3 +23,9 @@
 	align-items: center;
 	align-content: stretch;
 }
+.housesCon{
+  /* border-style: solid;
+  border-width: 1px; */
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
