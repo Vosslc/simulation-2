@@ -1,3 +1,4 @@
+
 module.exports = {
 
   getAllHouses(req, res){
