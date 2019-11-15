@@ -49,7 +49,7 @@ class Dashboard extends Component {
       <div className="dashContainer">
         <div className="dash_subheader">
           <h2>Dashboard</h2>
-          <Link to='../Wizard/Wizard'>
+          <Link to='/wizard1'>
             <button className='btn'>Add New Property</button>
           </Link>
           
