@@ -26,6 +26,8 @@ class House extends Component {
           <div className="houses">City: {this.props.el.city}</div>
           <div className="houses">State: {this.props.el.state}</div>
           <div className="houses">Zip: {this.props.el.zip}</div>
+          <div className="houses">Monthly Mortgage: {this.props.el.mortgage}</div>
+          <div className="houses">Desired Rent: {this.props.el.rent}</div>
         </div>
       </div>
     );

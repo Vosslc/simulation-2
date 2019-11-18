@@ -1,59 +1,103 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { connect } from "react-redux";
+import { updateMortgage, updateRent, clearState } from "../../ducks/reducer"; //! all the properties off of the Redux state (we'll need these to make our axios request)
 
-export default class Wizard3 extends Component {
-  constructor() {
-    super();
+class Wizard3 extends Component {
+  // constructor() {
+  //   super();
 
-    this.state = {
-      mortgage: 0,
-      rent: 0
-    };
-  }
+  //   this.state = {
+  //     mortgage: 0,
+  //     rent: 0
+  //   };
+  // }
 
   // ******METHODS******//
 
-  handleChangeMortgage(value) {
-    this.setState({ mortgage: value });
+  // handleChangeMortgage(value) {
+  //   this.setState({ mortgage: value });
+  // }
+
+  // handleChangeRent(value) {
+  //   this.setState({ rent: value });
+  // }
+
+  componentDidMount() {
+    console.log(this.props);
   }
 
-  handleChangeRent(value) {
-    this.setState({ rent: value });
-  }
-  
-// ****AXIOS SERVER CALLS**** //
+  // ****AXIOS SERVER CALLS**** //
   addHouse() {
-    axios.post('/api/houses', this.state)
-      .then(res => {
-        this.props.history.push('/')
-      })
+    axios.post("/api/houses", this.props).then(res => {
+      this.props.history.push("/");
+      this.props.clearState()
+    });
   }
 
   render() {
-    const { mortgage, rent } = this.state
+    const { updateMortgage, updateRent } = this.props;
     return (
-      <div>
-        <div className="Mortgage_Amount">
-          <h3>Monthly Mortgage Amount</h3>
-          <input
-            className="name__input"
-            placeholder="Mortgage Amount"
-            value={mortgage}
-            onChange={e => this.handleChangeMortgage(e.target.value)}
-          />
+      <div className="wizard">
+        <div className="dashboard-flex">
+          <h3>Add New Listing</h3>
+          <Link to="/">
+            <button className="cancel" onClick={() => this.props.clearState()}>Cancel</button>
+          </Link>
         </div>
-        <div className="Rent_Amount">
-          <h3>Desierd Rent Amount</h3>
-          <input
-            className="name__input"
-            placeholder="Rent"
-            value={rent}
-            onChange={e => this.handleChangeRent(e.target.value)}
-          />
+
+        <h5>Recommended Rent: ${this.props.mortgage * 1.25}</h5>
+
+        <div>Monthly Mortgage Amount</div>
+        <input
+          className="input"
+          type="number"
+          placeholder={this.props.mortgage}
+          onChange={e => updateMortgage(e.target.value)}
+          name="mortgage"
+          // value={this.state.image}
+        />
+
+        <div>Desired Monthly Rent</div>
+        <input
+          className="input"
+          type="number"
+          placeholder={this.props.rent}
+          onChange={e => updateRent(e.target.value)}
+          name="rent"
+        />
+        <div className="two-btns">
+          <button
+            className="complete-btn"
+            onClick={() => this.props.history.push("/wizard2")}
+          >
+            Previous Step
+          </button>
+          <button className="complete-btn" onClick={() => this.addHouse()}>
+            Complete
+          </button>
         </div>
-        <button className="complete-btn" onClick={() => this.props.history.push("/wizard2")}>Back</button>
-        <button className='btn' onClick={()=> this.addHouse()}>Complete</button>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { name, address, city, st, zipcode, image, mortgage, rent } = state;
+
+  return {
+    name,
+    address,
+    city,
+    st,
+    image,
+    zipcode,
+    mortgage,
+    rent
+  };
+}
+
+export default connect(mapStateToProps, { updateMortgage, updateRent, clearState })(
+  Wizard3
+);

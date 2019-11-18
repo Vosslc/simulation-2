@@ -13,14 +13,14 @@ module.exports = {
     },
     addHouse(req, res) {
       const db = req.app.get('db')
-      const {name, address, city, state, zip, img, mortgage, rent} = req.body
+      const {name, address, city, st, zipcode, image, mortgage, rent} = req.body
       db.add_house({
         name: name,
         address: address,
         city: city,
-        state: state,
-        zip: zip,
-        img: img,
+        state: st,
+        zip: zipcode,
+        img: image,
         mortgage: mortgage,
         rent: rent
       })

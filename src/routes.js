@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import Dashboard from './Components/Dashboard/Dashboard'
-import Wizard from './Components/Wizard/Wizard'
+// import Wizard from './Components/Wizard/Wizard'
 import Wizard1 from './Components/Wizard/Wizard1';
 import Wizard2 from './Components/Wizard/Wizard2';
 import Wizard3 from './Components/Wizard/Wizard3';
